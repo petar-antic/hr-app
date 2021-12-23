@@ -1,5 +1,6 @@
 import React from 'react';
-import star from './star.svg';
+import '../../styles/navbar/Navbar.css';
+import star from '../../assets/icons/star.svg';
 
 function Navbar() {
   return (
