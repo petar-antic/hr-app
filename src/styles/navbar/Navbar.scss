@@ -1,0 +1,28 @@
+@import '../../variabless';
+
+nav {
+  display: flex;
+  padding: 14px 40px 19px 16px;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid $black;
+  background: $grey-10;
+  .logo {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    span {
+      font-size: $h3Size;
+      line-height: $h3Height;
+    }
+  }
+  .navLinks {
+    display: flex;
+    align-items: center;
+    column-gap: 32px;
+    span {
+      font-size: $bodySize;
+      line-height: $bodyHeight;
+    }
+  }
+}
