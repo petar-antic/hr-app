@@ -1,10 +1,10 @@
-import Navbar from './components/navbar/Navbar';
+import LogIn from './components/Login/Login';
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
       <h1>HR App</h1>
+      <LogIn />
     </div>
   );
 }
