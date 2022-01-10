@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap");
+form .wrapper .register {
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  width: 104px;
+  height: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+/*# sourceMappingURL=register.css.map */
