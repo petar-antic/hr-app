@@ -11,12 +11,8 @@ function Navbar() {
         <span>Logo</span>
       </div>
       <div className="navLinks">
-        <Link to={`/`}>
-          <span>Login</span>
-        </Link>
-        <Link to={`/Register`}>
-          <span>Register</span>
-        </Link>
+        <Link to={`/`}>Login</Link>
+        <Link to={`/Register`}>Register</Link>
         <span>Page three</span>
       </div>
     </nav>

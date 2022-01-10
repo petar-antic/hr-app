@@ -24,9 +24,9 @@ export const logInStart = (credentials) => ({
   payload: credentials,
 });
 
-export const logInSuccess = (user) => ({
+export const logInSuccess = (response) => ({
   type: types.LOG_IN_SUCCESS,
-  payload: user,
+  payload: response,
 });
 
 export const logInFailure = (error) => ({

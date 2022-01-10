@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
+import '../../styles/Register/register.css';
 import { registerStart } from '../../redux/actions/user-actions';
 
 const Register = () => {
-  const [credentials, setCredentials] = useState({ email: '', password: '' });
+  const [credentials, setCredentials] = useState({
+    name: '',
+    email: '',
+    password: '',
+  });
 
   const dispatch = useDispatch();
 
@@ -17,27 +23,40 @@ const Register = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>REGISTER</h2>
-      <label>
-        Email
-        <input
-          name="email"
-          type="text"
-          value={credentials.email}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Password
-        <input
-          name="password"
-          type="password"
-          value={credentials.password}
-          onChange={handleChange}
-        />
-      </label>
-      <button type="submit">Log In</button>
+    <form className="flex flex-column" onSubmit={handleSubmit}>
+      <h1>uTeam - Register</h1>
+      <label>Name</label>
+      <input
+        placeholder="Name"
+        name="name"
+        type="text"
+        value={credentials.name}
+        onChange={handleChange}
+      />
+      <label>Email</label>
+      <input
+        placeholder="Email"
+        name="email"
+        type="email"
+        value={credentials.email}
+        onChange={handleChange}
+      />
+      <label>Password</label>
+      <input
+        placeholder="Password"
+        name="password"
+        type="password"
+        value={credentials.password}
+        onChange={handleChange}
+      />
+      <label>Profile photo</label>
+      <input placeholder="Upload file" />
+      <div className="flex wrapper">
+        <Link to={`/`}>Already have an account?</Link>
+        <button type="submit" className="register">
+          Register
+        </button>
+      </div>
     </form>
   );
 };
