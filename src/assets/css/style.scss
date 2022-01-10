@@ -1,0 +1,83 @@
+.container-login-register {
+  margin: 50px auto 0 auto;
+  width: 300px;
+
+  @media only screen and (min-device-width: 768px) {
+    width: 370px;
+    margin-top: 70px;
+  }
+
+  @media only screen and (min-device-width: 1440px) {
+    width: 380px;
+  }
+
+  h3 {
+    font-size: 28px;
+    line-height: 32px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    padding-bottom: 55px;
+    margin: 0;
+  }
+
+  .input-label {
+    padding-bottom: 5px;
+    font-size: 12px;
+  }
+
+  .form-input {
+    width: 90%;
+  }
+
+  .error-box {
+    height: 30px;
+
+    .error-message {
+      font-size: 10px;
+      color: brown;
+      padding-top: 3px;
+      display: none;
+    }
+  }
+
+  .btn-login {
+    width: 85px;
+    height: 30px;
+    float: right;
+    border-radius: 5px;
+    margin-right: 12px;
+
+    @media only screen and (min-device-width: 768px) {
+      margin-right: 0;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .file-input {
+    border: 1px solid black;
+    width: 90%;
+    height: 30px;
+    padding: 2px;
+    display: block;
+    margin-bottom: 40px;
+
+    @media only screen and (min-device-width: 768px) {
+      height: 35px;
+    }
+  }
+
+  .btn-register {
+    width: 104px;
+    height: 30px;
+    border-radius: 5px;
+    float: right;
+    margin-right: 25px;
+
+    @media only screen and (min-device-width: 768px) {
+      margin-right: 32px;
+    }
+  }
+}
