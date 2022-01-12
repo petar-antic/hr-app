@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap");
+form .file-input {
+  height: 50px;
+  padding-right: 8.5px;
+}
+form input[type=file]::file-selector-button {
+  width: 122px;
+  height: 30px;
+  border-radius: 4px;
+  border: 2px solid #000000;
+  background-color: #dee0e3;
+  float: right;
+  margin: 7px 0;
+  padding: 6px 24px;
+}
+form .jc-end {
+  justify-content: end;
+}
+form .jc-end .btn-save {
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  width: 85px;
+  height: 30px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=CompanyInfo.css.map */
