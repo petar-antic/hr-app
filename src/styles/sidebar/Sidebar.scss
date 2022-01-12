@@ -1,0 +1,41 @@
+@import '../../variabless';
+
+.sidebar {
+  padding-top: 34px;
+  display: flex;
+  flex-direction: column;
+  justify-self: start;
+  row-gap: 12px;
+  border-right: 1px solid black;
+  height: 100%;
+  width: 298px;
+  position: fixed;
+  z-index: 1;
+  overflow-x: hidden;
+  span {
+    padding-left: 37px;
+    font-weight: $regular;
+    font-size: $h2Size;
+    line-height: $h2Height;
+    letter-spacing: 0.04em;
+    color: $black;
+  }
+  ul {
+    margin: 0;
+    padding-inline-start: 27px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    list-style: none;
+    li {
+      background-image: url(../../assets/icons/arrow1right.svg);
+      background-repeat: no-repeat;
+      background-position: left 50%;
+      padding-left: 2em;
+      font-weight: $regular;
+      font-size: $h3Size;
+      line-height: $h3Height;
+      color: $black;
+    }
+  }
+}
