@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import '../../styles/CompanyInfo/CompanyInfo.css';
-//import arrow1Right from './assets/icons/arrow 1 - right.svg';
 
 const CompanyInfo = () => {
   return (
