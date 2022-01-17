@@ -4,6 +4,7 @@ import Navbar from '../components/navbar/Navbar';
 import Login from '../components/Login/Login';
 import Register from '../components/Register/Register';
 import Sidebar from '../components/sidebar/Sidebar';
+import Questions from '../components/questions/Questions';
 
 function AppRoutes() {
   return (
@@ -15,6 +16,7 @@ function AppRoutes() {
             <Route exact path="/" element={<Login />} />
             <Route path="/Register" element={<Register />} />
             <Route path="/Sidebar" element={<Sidebar />} />
+            <Route path="/Questions" element={<Questions />} />
           </Routes>
         </div>
       </div>
