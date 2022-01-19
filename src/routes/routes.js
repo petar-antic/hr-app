@@ -5,6 +5,7 @@ import Login from '../components/Login/Login';
 import Register from '../components/Register/Register';
 import Sidebar from '../components/sidebar/Sidebar';
 import Questions from '../components/questions/Questions';
+import AddNewQuestion from '../components/addNewQuestion/AddNewQuestion';
 
 function AppRoutes() {
   return (
@@ -17,6 +18,7 @@ function AppRoutes() {
             <Route path="/Register" element={<Register />} />
             <Route path="/Sidebar" element={<Sidebar />} />
             <Route path="/Questions" element={<Questions />} />
+            <Route path="/Questions/addnew" element={<AddNewQuestion />} />
           </Routes>
         </div>
       </div>

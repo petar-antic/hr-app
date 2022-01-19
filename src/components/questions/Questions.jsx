@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../styles/questions/Questions.css';
+import { Link } from 'react-router-dom';
 
 import topBtn from '../../assets/icons/arrow1top.svg';
 import downBtn from '../../assets/icons/arrow1down.svg';
@@ -9,7 +10,9 @@ function Questions() {
     <div className="questions">
       <div className="heading">
         <span>Questions</span>
-        <button>Add new question</button>
+        <Link to={`/questions/addnew`}>
+          <button>Add new Question</button>
+        </Link>
       </div>
       <div className="questionList">
         <div className="question">

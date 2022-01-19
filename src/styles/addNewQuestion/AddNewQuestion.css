@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap");
+.addNewQuestion {
+  padding: 34px 432px 0px 49px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.addNewQuestion .heading {
+  padding-bottom: 38px;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  color: #000000;
+}
+
+.addNewQuestion form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.addNewQuestion form .questionText {
+  padding-bottom: 34px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.addNewQuestion form .questionText label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+  color: #000000;
+}
+
+.addNewQuestion form .questionText input {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 18px;
+  color: #7b7b7b;
+}
+
+.addNewQuestion form .questionText input:focus {
+  outline: none;
+}
+
+.addNewQuestion form .questionType {
+  padding-bottom: 34px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.addNewQuestion form .questionType label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+  color: #000000;
+}
+
+.addNewQuestion form .questionType select {
+  border: 2px solid #000000;
+  padding: 9px 0 10px 16px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url(../../assets/icons/arrow3down.svg);
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: #7b7b7b;
+}
+
+.addNewQuestion form .questionType select:hover {
+  cursor: pointer;
+}
+
+.addNewQuestion form .questionType select:focus {
+  outline: none;
+  border: 2px solid #000000;
+}
+
+.addNewQuestion form #saveBtn {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  padding: 6px 24px;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  background: #ffffff;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  color: #000000;
+}
+
+.addNewQuestion form #saveBtn:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=AddNewQuestion.css.map */
