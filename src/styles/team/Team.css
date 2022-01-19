@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap");
+.team {
+  padding: 34px 40px 0px 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 18px;
+}
+
+.team .heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-column-gap: 733px;
+          column-gap: 733px;
+}
+
+.team .heading span {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 32.2px;
+  letter-spacing: 0.04em;
+  color: #000000;
+}
+
+.team .heading button {
+  border: 2px solid #000000;
+  border-radius: 4px;
+  padding: 7px 24px 7px 48px;
+  background-color: #ffffff;
+  background-image: url("../../assets/icons/add.svg");
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 24px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18.4px;
+  white-space: nowrap;
+  color: #000000;
+}
+
+.team .heading button:hover {
+  cursor: pointer;
+}
+
+.team .member {
+  height: 319px;
+  width: 292px;
+  padding: 19px 22px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  -webkit-column-gap: 26px;
+          column-gap: 26px;
+  border: 1px solid #000000;
+  background: #f2f2f2;
+  grid-auto-columns: 1fr;
+  -ms-grid-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.1fr 0.9fr;
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+  gap: 0px 0px;
+      grid-template-areas: 'profilePic profilePic' 'memberInfo memberStatus' 'editBtn delBtn';
+}
+
+.team .profilePic {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: profilePic;
+  padding-bottom: 19px;
+}
+
+.team .memberInfo {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: memberInfo;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.team .memberInfo .name {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  color: #000000;
+}
+
+.team .memberInfo .joinDate {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+  color: #000000;
+}
+
+.team .memberStatus {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: memberStatus;
+  justify-self: flex-end;
+  padding: 6px 16px;
+  background: #7b7b7b;
+  border: 2px solid #7b7b7b;
+  border-radius: 32px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: #ffffff;
+}
+
+.team button {
+  padding: 6px 24px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18.4px;
+  color: #000000;
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 4px;
+}
+
+.team button:hover {
+  cursor: pointer;
+}
+
+.team .editBtn {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: editBtn;
+  justify-self: flex-start;
+}
+
+.team .delBtn {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: delBtn;
+  justify-self: flex-end;
+}
+/*# sourceMappingURL=Team.css.map */

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap");
 .questions {
   padding: 34px 39px 0px 50px;
   display: -webkit-box;
@@ -25,9 +26,9 @@
 }
 
 .questions .heading span {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 28px;
-  line-height: 32px;
+  line-height: 32.2px;
   letter-spacing: 0.04em;
   color: #000000;
 }
@@ -36,14 +37,14 @@
   border: 2px solid #000000;
   border-radius: 4px;
   padding: 7px 24px 7px 48px;
-  background-color: white;
+  background-color: #ffffff;
   background-image: url("../../assets/icons/add.svg");
   background-repeat: no-repeat;
   background-position-y: center;
   background-position-x: 24px;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 16px;
-  line-height: 18px;
+  line-height: 18.4px;
   white-space: nowrap;
   color: #000000;
 }
@@ -53,7 +54,7 @@
 }
 
 .questions .questionList .question {
-  border: 1px solid black;
+  border: 1px solid #000000;
   display: -ms-grid;
   display: grid;
   padding: 25px 40px 22px 19px;
@@ -103,9 +104,9 @@
   -ms-grid-column: 2;
   grid-area: questionNum;
   padding-bottom: 6px;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 13.8px;
   letter-spacing: 0.04em;
   color: #000000;
 }
@@ -114,7 +115,7 @@
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: questionTitle;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 20px;
   line-height: 23px;
   color: #000000;
@@ -143,9 +144,9 @@
 
 .questions .questionList .question .rightSide button {
   padding: 6px 24px;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 16px;
-  line-height: 18px;
+  line-height: 18.4px;
   color: #000000;
   background: #ffffff;
   border: 2px solid #000000;

@@ -1,0 +1,113 @@
+@import '../../variabless';
+
+.team {
+  padding: 34px 40px 0px 50px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 18px;
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    column-gap: 733px;
+    span {
+      font-weight: $bold;
+      font-size: $h1Size;
+      line-height: $h1Height;
+      letter-spacing: 0.04em;
+      color: $black;
+    }
+    button {
+      border: 2px solid $black;
+      border-radius: 4px;
+      padding: 7px 24px 7px 48px;
+      background-color: $white;
+      background-image: url('../../assets/icons/add.svg');
+      background-repeat: no-repeat;
+      background-position-y: center;
+      background-position-x: 24px;
+      font-weight: $bold;
+      font-size: $bodySize;
+      line-height: $bodyHeight;
+      white-space: nowrap;
+      color: $black;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .member {
+    height: 319px;
+    width: 292px;
+    padding: 19px 22px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    column-gap: 26px;
+    border: 1px solid #000000;
+    background: #f2f2f2;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0px 0px;
+    grid-template-areas:
+      'profilePic profilePic'
+      'memberInfo memberStatus'
+      'editBtn delBtn';
+  }
+  .profilePic {
+    grid-area: profilePic;
+    padding-bottom: 19px;
+  }
+  .memberInfo {
+    grid-area: memberInfo;
+    display: flex;
+    flex-direction: column;
+    .name {
+      font-weight: $bold;
+      font-size: 16px;
+      line-height: 18px;
+      color: $black;
+    }
+    .joinDate {
+      font-weight: $regular;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 0.04em;
+      color: $black;
+    }
+  }
+  .memberStatus {
+    grid-area: memberStatus;
+    justify-self: flex-end;
+    padding: 6px 16px;
+    background: #7b7b7b;
+    border: 2px solid #7b7b7b;
+    border-radius: 32px;
+    font-weight: $regular;
+    font-size: 16px;
+    line-height: 18px;
+    color: $white;
+  }
+  button {
+    padding: 6px 24px;
+    font-weight: $bold;
+    font-size: $bodySize;
+    line-height: $bodyHeight;
+    color: $black;
+    background: $white;
+    border: 2px solid $black;
+    border-radius: 4px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .editBtn {
+    grid-area: editBtn;
+    justify-self: flex-start;
+  }
+  .delBtn {
+    grid-area: delBtn;
+    justify-self: flex-end;
+  }
+}

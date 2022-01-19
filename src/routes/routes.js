@@ -6,6 +6,7 @@ import Register from '../components/Register/Register';
 import Sidebar from '../components/sidebar/Sidebar';
 import Questions from '../components/questions/Questions';
 import AddNewQuestion from '../components/addNewQuestion/AddNewQuestion';
+import Team from '../components/team/Team';
 
 function AppRoutes() {
   return (
@@ -19,6 +20,7 @@ function AppRoutes() {
             <Route path="/Sidebar" element={<Sidebar />} />
             <Route path="/Questions" element={<Questions />} />
             <Route path="/Questions/addnew" element={<AddNewQuestion />} />
+            <Route path="/Team" element={<Team />} />
           </Routes>
         </div>
       </div>
