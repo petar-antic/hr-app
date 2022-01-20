@@ -28,7 +28,7 @@
 .team .heading span {
   font-weight: 700;
   font-size: 28px;
-  line-height: 32.2px;
+  line-height: 32px;
   letter-spacing: 0.04em;
   color: #000000;
 }
@@ -44,7 +44,7 @@
   background-position-x: 24px;
   font-weight: 700;
   font-size: 16px;
-  line-height: 18.4px;
+  line-height: 18px;
   white-space: nowrap;
   color: #000000;
 }
@@ -65,8 +65,8 @@
   justify-items: center;
   -webkit-column-gap: 26px;
           column-gap: 26px;
-  border: 1px solid #000000;
-  background: #f2f2f2;
+  border: 1px solid #ffffff;
+  background: #f1f1f1;
   grid-auto-columns: 1fr;
   -ms-grid-columns: 1.1fr 0.9fr;
       grid-template-columns: 1.1fr 0.9fr;
@@ -131,7 +131,7 @@
   padding: 6px 24px;
   font-weight: 700;
   font-size: 16px;
-  line-height: 18.4px;
+  line-height: 18px;
   color: #000000;
   background: #ffffff;
   border: 2px solid #000000;

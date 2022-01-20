@@ -6,9 +6,9 @@
   flex-direction: column;
   .heading {
     padding-bottom: 38px;
-    font-weight: bold;
-    font-size: 28px;
-    line-height: 32px;
+    font-weight: $bold;
+    font-size: $h1Size;
+    line-height: $h1Height;
     letter-spacing: 0.04em;
     color: $black;
   }
@@ -21,16 +21,16 @@
       flex-direction: column;
       label {
         font-weight: $regular;
-        font-size: 12px;
-        line-height: 14px;
+        font-size: $labelSize;
+        line-height: $labelHeight;
         letter-spacing: 0.04em;
         color: $black;
       }
       input {
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 18px;
-        color: #7b7b7b;
+        font-weight: $regular;
+        font-size: $bodySize;
+        line-height: $bodyHeight;
+        color: $grey;
         &:focus {
           outline: none;
         }
@@ -42,8 +42,8 @@
       flex-direction: column;
       label {
         font-weight: $regular;
-        font-size: 12px;
-        line-height: 14px;
+        font-size: $labelSize;
+        line-height: $labelHeight;
         letter-spacing: 0.04em;
         color: $black;
       }
@@ -57,9 +57,9 @@
         background-repeat: no-repeat;
         background-position: right 8px center;
         font-weight: $regular;
-        font-size: 16px;
-        line-height: 18px;
-        color: #7b7b7b;
+        font-size: $bodySize;
+        line-height: $bodyHeight;
+        color: $grey;
         &:hover {
           cursor: pointer;
         }
@@ -76,8 +76,8 @@
       border-radius: 4px;
       background: $white;
       font-weight: $bold;
-      font-size: 16px;
-      line-height: 18px;
+      font-size: $bodySize;
+      line-height: $bodyHeight;
       color: $black;
       &:hover {
         cursor: pointer;
