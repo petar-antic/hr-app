@@ -18,3 +18,7 @@
 .flex-column {
   flex-direction: column;
 }
+
+.error-message {
+  color: red;
+}

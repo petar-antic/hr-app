@@ -37,3 +37,20 @@ export const logInFailure = (error) => ({
 export const logOut = () => ({
   type: types.LOG_OUT,
 });
+
+// Profile
+
+export const saveProfileStart = (profileInfo) => ({
+  type: types.SAVE_PROFILE_START,
+  payload: profileInfo,
+});
+
+export const saveProfileSuccess = (response) => ({
+  type: types.SAVE_PROFILE_SUCCESS,
+  payload: response,
+});
+
+export const saveProfileError = (error) => ({
+  type: types.SAVE_PROFILE_ERROR,
+  payload: error,
+});
