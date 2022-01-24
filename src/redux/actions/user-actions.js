@@ -37,3 +37,10 @@ export const logInFailure = (error) => ({
 export const logOut = () => ({
   type: types.LOG_OUT,
 });
+
+// Image upload
+
+export const uploadImage = (formData) => ({
+  type: types.UPLOAD_IMAGE,
+  formData,
+});

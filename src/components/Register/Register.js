@@ -12,6 +12,8 @@ const Register = () => {
     password: '',
   });
 
+  // const [files, setFiles] = useState();
+
   const dispatch = useDispatch();
 
   const handleChange = (e) =>
@@ -50,7 +52,11 @@ const Register = () => {
         onChange={handleChange}
       />
       <label>Profile photo</label>
-      <input placeholder="Upload file" />
+      {/* <input
+        type="file"
+        placeholder="Upload file"
+        onChange={(e) => setFiles(e.target.files)}
+      /> */}
       <div className="flex wrapper">
         <Link to={`/`}>Already have an account?</Link>
         <button type="submit" className="register">
