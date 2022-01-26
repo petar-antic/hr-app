@@ -3,6 +3,33 @@ form select {
   margin-bottom: 20px;
 }
 
+form div {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+form div div {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+form div div label {
+  margin: 0;
+}
+
+form div div input {
+  margin: 0;
+}
+
+form div .radioBtn {
+  width: auto;
+}
+
 form .wrapper .register {
   background: #ffffff;
   border: 2px solid #000000;

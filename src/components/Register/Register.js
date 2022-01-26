@@ -19,21 +19,29 @@ const Register = () => {
     fetchCompanies();
   }, []);
 
-  const [company, setCompany] = useState();
   const [companies, setCompanies] = useState([]);
-
-  const handleCompany = (e) => {
-    setCompany(e.target.value);
-  };
+  const [files, setFiles] = useState();
 
   const [credentials, setCredentials] = useState({
     name: '',
     email: '',
     password: '',
+    photo: null,
+    role: '',
+    company: '',
   });
+
+  const handleFileChange = async (e) => {
+    setFiles(e.target.files[0]);
+    const formData = new FormData();
+    formData.append('files', files);
+
+    setCredentials({ ...credentials, photo: formData });
+  };
 
   const handleChange = (e) =>
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
+  console.log(credentials);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -72,15 +80,51 @@ const Register = () => {
       />
 
       <label>Profile photo</label>
-      <input type="file" placeholder="Upload file" />
+      <input
+        type="file"
+        placeholder="Upload file"
+        onChange={(e) => handleFileChange(e)}
+      />
 
-      <select onChange={handleCompany}>
+      <div className="flex">
+        <div className="flex">
+          <label>Company User</label>
+          <input
+            type="radio"
+            className="radioBtn"
+            value="company_user"
+            id="company_user"
+            name="role"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="flex">
+          <label>Company Admin</label>
+          <input
+            type="radio"
+            className="radioBtn"
+            value="company_admin"
+            id="company_admin"
+            name="role"
+            onChange={handleChange}
+          />
+        </div>
+      </div>
+
+      <select
+        onChange={(e) => {
+          setCredentials({ ...credentials, company: e.target.value });
+        }}
+      >
+        <option>Choose a company</option>
         {companies.map((company) => {
-          return <option key={company.id}>{company.attributes.name}</option>;
+          return (
+            <option key={company.id} value={company.id}>
+              {company.attributes.name}
+            </option>
+          );
         })}
       </select>
-
-      <p>your selected company: {company}</p>
 
       <div className="flex wrapper">
         <Link to={`/`}>Already have an account?</Link>
