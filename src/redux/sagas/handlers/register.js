@@ -2,7 +2,6 @@ import { call, put } from 'redux-saga/effects';
 
 import { registerFailure, registerSuccess } from '../../actions/user-actions';
 import { requestRegisterUser } from '../requests/register';
-import { requestUploadImage } from '../requests/image';
 
 export function* handleRegisterUser(payload) {
   try {
