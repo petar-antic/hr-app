@@ -1,4 +1,4 @@
-import { call, put } from 'redux-saga/effects';
+import { call } from 'redux-saga/effects';
 
 import { requestUploadImage } from '../requests/image';
 

@@ -1,6 +1,9 @@
 @import '../../variabless';
 
 form {
+  select {
+    margin-bottom: 20px;
+  }
   .wrapper {
     .register {
       background: $white;
