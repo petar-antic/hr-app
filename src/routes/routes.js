@@ -7,6 +7,7 @@ import Sidebar from '../components/sidebar/Sidebar';
 import Questions from '../components/questions/Questions';
 import AddNewQuestion from '../components/addNewQuestion/AddNewQuestion';
 import Team from '../components/team/Team';
+import Image from '../components/imageUpload/Image';
 
 function AppRoutes() {
   return (
@@ -21,6 +22,7 @@ function AppRoutes() {
             <Route path="/Questions" element={<Questions />} />
             <Route path="/Questions/addnew" element={<AddNewQuestion />} />
             <Route path="/Team" element={<Team />} />
+            <Route path="/Upload" element={<Image />} />
           </Routes>
         </div>
       </div>

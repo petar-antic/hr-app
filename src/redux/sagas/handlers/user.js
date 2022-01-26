@@ -7,6 +7,7 @@ export function* handleLoginUser(payload) {
   try {
     const response = yield call(requestLoginUser, payload);
     console.log(response);
+    localStorage.setItem('token', response.data.jwt);
     yield put(logInSuccess(response));
   } catch (error) {
     yield put(logInFailure(error));
