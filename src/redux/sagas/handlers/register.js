@@ -8,6 +8,9 @@ export function* handleRegisterUser(payload) {
     const response = yield call(requestRegisterUser, payload);
     console.log(response);
     localStorage.setItem('token', response.data.jwt);
+    if (response.status === 200) {
+      yield call(requestRegisterUser, payload);
+    }
     yield put(registerSuccess(response));
   } catch (error) {
     yield put(registerFailure(error.response.data));

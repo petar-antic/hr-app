@@ -12,7 +12,7 @@ const Register = () => {
   useEffect(() => {
     async function fetchCompanies() {
       const response = await axios.get(
-        'https://internship-hr-app.herokuapp.com/api/companies'
+        'https://strapi-internship-hr-app.onrender.com/api/companies'
       );
       setCompanies(response.data.data);
     }
@@ -21,6 +21,7 @@ const Register = () => {
 
   const [companies, setCompanies] = useState([]);
   const [files, setFiles] = useState();
+  const [companyMenu, setCompanyMenu] = useState('');
 
   const [credentials, setCredentials] = useState({
     name: '',
@@ -86,7 +87,22 @@ const Register = () => {
         onChange={(e) => handleFileChange(e)}
       />
 
-      <div className="flex">
+      <select onChange={(e) => setCompanyMenu(e.target.value)}>
+        <option>Join or create a Company</option>
+        <option value={'join'}>Join a Company</option>
+        <option value={'create'}>Create a Company</option>
+      </select>
+
+      <div
+        className={`flex flex-column ${
+          companyMenu === 'create' ? '' : 'invisible'
+        }`}
+      >
+        <label>Name your Company</label>
+        <input placeholder="Company name" name="name" type="text" />
+      </div>
+
+      <div className={`flex ${companyMenu === 'join' ? '' : 'invisible'}`}>
         <div className="flex">
           <label>Company User</label>
           <input
@@ -112,6 +128,7 @@ const Register = () => {
       </div>
 
       <select
+        className={`${companyMenu === 'join' ? '' : 'invisible'}`}
         onChange={(e) => {
           setCredentials({ ...credentials, company: e.target.value });
         }}
