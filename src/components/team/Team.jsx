@@ -1,10 +1,20 @@
 import React from 'react';
-import '../../styles/team/Team.css';
+import api from '../../utils/axios-instance';
+import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
+import '../../styles/team/Team.css';
 
-import profilePic from '../../assets/profilePic.png';
+import Member from './member/Member';
+
+const fetchTeam = async () => {
+  const { data } = await api.get('/profiles?filters[company][id][$eq]=41');
+  return data;
+};
 
 function Team() {
+  const { status, data } = useQuery('team', fetchTeam);
+  console.log(data);
+
   return (
     <div className="team">
       <div className="heading">
@@ -14,7 +24,8 @@ function Team() {
         </Link>
       </div>
       <div className="teamList">
-        <div className="member">
+        <Member />
+        {/* <div className="member">
           <img src={profilePic} alt="/" className="profilePic" />
           <div className="memberInfo">
             <span className="name">Michael Jones</span>
@@ -23,7 +34,7 @@ function Team() {
           <div className="memberStatus">Published</div>
           <button className="editBtn">Edit</button>
           <button className="delBtn">Delete</button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
