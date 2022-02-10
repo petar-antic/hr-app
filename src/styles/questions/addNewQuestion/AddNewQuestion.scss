@@ -1,4 +1,4 @@
-@import '../../variabless';
+@import '../../../variabless';
 
 .addNewQuestion {
   padding: 34px 432px 0px 49px;
@@ -53,7 +53,7 @@
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
-        background-image: url(../../assets/icons/arrow3down.svg);
+        background-image: url(../../../assets/icons/arrow3down.svg);
         background-repeat: no-repeat;
         background-position: right 8px center;
         font-weight: $regular;
