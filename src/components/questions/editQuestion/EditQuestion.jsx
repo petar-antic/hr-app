@@ -1,13 +1,17 @@
 import React from 'react';
-import '../../styles/addNewQuestion/AddNewQuestion.css';
+import { useLocation } from 'react-router';
+import '../../../styles/questions/editQuestion/EditQuestion.css';
 
-function Questions() {
+function EditQuestion() {
+  const location = useLocation();
+  console.log(location.state.type);
+
   return (
-    <div className="addNewQuestion">
-      <span className="heading">Add new Question</span>
+    <div className="editQuestion">
+      <span className="heading">Edit Question</span>
       <form>
         <div className="questionText">
-          <label for="questionText">Question text</label>
+          <label>Question text</label>
           <input
             type="text"
             name="questionText"
@@ -15,9 +19,9 @@ function Questions() {
           ></input>
         </div>
         <div className="questionType">
-          <label for="questionType">Question type</label>
+          <label>Question type</label>
           <select name="questionType">
-            <option value="" selected hidden>
+            <option value="" hidden>
               Select question type
             </option>
             <option value="Text">Text</option>
@@ -33,4 +37,4 @@ function Questions() {
   );
 }
 
-export default Questions;
+export default EditQuestion;

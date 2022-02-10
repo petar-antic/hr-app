@@ -1,36 +1,49 @@
 import React from 'react';
-import '../../styles/questions/Questions.css';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
-// import { useQuery } from 'react-query';
+import { useQuery } from 'react-query';
 
-import topBtn from '../../assets/icons/arrow1top.svg';
-import downBtn from '../../assets/icons/arrow1down.svg';
+import '../../styles/questions/Questions.css';
+import Question from './question/Question';
+
+const fetchQuestions = async () => {
+  const response = await axios.get(
+    'https://internship-hr-app.herokuapp.com/api/questions?populate=*'
+  );
+  return response.data.data;
+};
 
 function Questions() {
-  // const {} = useQuery('questions', fetchQuestions);
+  const { data, status } = useQuery('questions', fetchQuestions);
+  const deleteQuestion = () => {
+    console.log('delete');
+  };
 
   return (
     <div className="questions">
       <div className="heading">
         <span>Questions</span>
-        <Link to={`/questions/addnew`}>
+        <Link to={`/questions/addnewquestion`}>
           <button>Add new Question</button>
         </Link>
       </div>
-      <div className="questionList">
-        <div className="question">
-          <div className="leftSide">
-            <img className="topBtn" src={topBtn} alt="topBtn"></img>
-            <img className="downBtn" src={downBtn} alt="downBtn"></img>
-            <p className="questionNum">Question 1 - Text</p>
-            <p className="questionTitle">Do you have any pets?</p>
-          </div>
-          <div className="rightSide">
-            <button className="editBtn">Edit</button>
-            <button className="delBtn">Delete</button>
-          </div>
+      {status === 'loading' && <div>Loading data...</div>}
+      {status === 'error' && <div>Error fetching data</div>}
+      {status === 'success' && (
+        <div className="questionList">
+          {data.map((question) => {
+            return (
+              <Question
+                text={question.attributes.text}
+                type={question.attributes.type}
+                key={question.id}
+                id={question.id}
+                deleteQuestion={deleteQuestion}
+              />
+            );
+          })}
         </div>
-      </div>
+      )}
     </div>
   );
 }
