@@ -7,7 +7,9 @@ import '../../styles/team/Team.css';
 import Member from './member/Member';
 
 const fetchTeam = async () => {
-  const { data } = await api.get('/profiles?filters[company][id][$eq]=41');
+  const { data } = await api.get(
+    '/profiles?filters[company][name][$eq]=Ghetto'
+  );
   return data;
 };
 
@@ -23,18 +25,8 @@ function Team() {
           <button>Add new Member</button>
         </Link>
       </div>
-      <div className="teamList">
-        <Member />
-        {/* <div className="member">
-          <img src={profilePic} alt="/" className="profilePic" />
-          <div className="memberInfo">
-            <span className="name">Michael Jones</span>
-            <span className="joinDate">Joined Jan 23rd, 2021</span>
-          </div>
-          <div className="memberStatus">Published</div>
-          <button className="editBtn">Edit</button>
-          <button className="delBtn">Delete</button>
-        </div> */}
+      <div className="teamList flex">
+        {status === 'success' && <Member data={data.data} />}
       </div>
     </div>
   );
