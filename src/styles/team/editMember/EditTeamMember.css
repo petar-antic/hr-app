@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap");
+.holder {
+  margin: auto;
+}
+
+.holder .profile-card {
+  border: 1px solid #000000;
+  margin-top: 40px;
+}
+
+.holder .profile-card .profile-card-header {
+  padding: 20px 0 10px 27px;
+  border-bottom: 1px solid #000000;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 400;
+}
+
+.holder .profile-card form {
+  padding: 25px;
+}
+
+.holder .profile-card h3 {
+  margin-top: 0;
+  margin-bottom: 13px;
+}
+
+.holder .mr-50 {
+  margin-right: 50px;
+}
+/*# sourceMappingURL=EditTeamMember.css.map */

@@ -8,7 +8,7 @@ import Member from './member/Member';
 
 const fetchTeam = async () => {
   const { data } = await api.get(
-    '/profiles?filters[company][name][$eq]=Ghetto'
+    '/profiles?filters[company][name][$eq]=Marger'
   );
   return data;
 };

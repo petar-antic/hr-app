@@ -10,6 +10,7 @@ import Questions from '../components/questions/Questions';
 import AddNewQuestion from '../components/questions/addNewQuestion/AddNewQuestion';
 import EditQuestion from '../components/questions/editQuestion/EditQuestion';
 import Team from '../components/team/Team';
+import EditMember from '../components/team/editMember/EditMember';
 import Image from '../components/imageUpload/Image';
 
 const queryClient = new QueryClient();
@@ -36,6 +37,7 @@ function AppRoutes() {
                 element={<EditQuestion />}
               />
               <Route path="/Team" element={<Team />} />
+              <Route path="/Team/EditTeamMember/:id" element={<EditMember />} />
               <Route path="/Upload" element={<Image />} />
             </Routes>
             <ReactQueryDevtools initialIsOpen={false} />

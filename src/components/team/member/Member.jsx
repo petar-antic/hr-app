@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import DeleteModal from '../deleteModal/DeleteModal';
 import '../../../styles/team/member/Member.css';
@@ -6,6 +7,7 @@ import '../../../styles/team/member/Member.css';
 const Member = ({ data }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [profileName, setProfileName] = useState('');
+  const [profileID, setProfileID] = useState('');
 
   return (
     <div className="flex teamList">
@@ -18,11 +20,14 @@ const Member = ({ data }) => {
               <span className="joinDate">Joined Jan 23rd, 2021</span>
             </div>
             <div className="memberStatus">Published</div>
-            <button className="editBtn">Edit</button>
+            <Link to={`/Team/EditTeamMember/${person.id}`}>
+              <button className="editBtn">Edit</button>
+            </Link>
             <button
               className="delBtn"
               onClick={() => {
                 setProfileName(person.attributes.name);
+                setProfileID(person.id);
                 setModalOpen(true);
               }}
             >
@@ -32,7 +37,11 @@ const Member = ({ data }) => {
         );
       })}
       {modalOpen && (
-        <DeleteModal name={profileName} setModalOpen={setModalOpen} />
+        <DeleteModal
+          name={profileName}
+          profileID={profileID}
+          setModalOpen={setModalOpen}
+        />
       )}
     </div>
   );
