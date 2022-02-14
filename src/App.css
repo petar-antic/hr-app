@@ -17,3 +17,11 @@
 .flex-column {
   flex-direction: column;
 }
+
+.auto {
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}

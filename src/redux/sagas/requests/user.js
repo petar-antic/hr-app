@@ -6,3 +6,8 @@ export function requestLoginUser({ payload: { email, password } }) {
     password,
   });
 }
+
+export function requestUserProfile(profileID) {
+  console.log(profileID);
+  return api.get(`/profiles?filters[user][id][$eq]=${profileID}&populate=*`);
+}

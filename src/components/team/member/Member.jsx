@@ -19,7 +19,7 @@ const Member = ({ data }) => {
               <span className="name">{person.attributes.name}</span>
               <span className="joinDate">Joined Jan 23rd, 2021</span>
             </div>
-            <div className="memberStatus">Published</div>
+            <div className="memberStatus">{person.attributes.status}</div>
             <Link to={`/Team/EditTeamMember/${person.id}`}>
               <button className="editBtn">Edit</button>
             </Link>
