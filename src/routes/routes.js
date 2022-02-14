@@ -5,6 +5,8 @@ import Login from '../components/Login/Login';
 import Register from '../components/Register/Register';
 import Profile from '../components/Profile/Profile';
 import CompanyInfo from '../components/CompanyInfo/CompanyInfo';
+import Team from '../components/Team/Team';
+import TeamEdit from '../components/TeamEdit/TeamEdit';
 
 function AppRoutes() {
   return (
@@ -17,6 +19,13 @@ function AppRoutes() {
             <Route path="/Register" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/company-info" element={<CompanyInfo />} />
+            <Route path="/team" element={<Team status="published" />} />
+            <Route path="/pending" element={<Team status="pending" />} />
+            <Route path="/team-edit" element={<TeamEdit edit={true} />} />
+            <Route
+              path="/moderate-member"
+              element={<TeamEdit edit={false} />}
+            />
           </Routes>
         </div>
       </div>

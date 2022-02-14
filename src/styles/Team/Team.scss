@@ -1,0 +1,137 @@
+@import '../../variabless';
+
+.container {
+  margin-top: 35px;
+  padding: 0 30px 0 30px;
+  width: 100%;
+
+  h1 {
+    font-size: $h1Size;
+    line-height: $h1Height;
+    font-weight: $regular;
+    color: $black;
+    margin-bottom: 35px;
+  }
+
+  .btn-add-team {
+    width: 200px;
+    height: 32px;
+    border: 2px solid $black;
+    border-radius: 4px;
+    background-color: $white;
+    color: $black;
+    font-weight: $regular;
+    float: right;
+  }
+
+  .add-member-view {
+    display: flex;
+    justify-content: end;
+    padding-bottom: 20px;
+
+    .add-member-form {
+      background-color: $grey-7;
+      padding: 15px;
+      display: inline-block;
+
+      input {
+        width: 220px;
+        height: 25px;
+        margin-bottom: 30px;
+        display: block;
+      }
+
+      .float-right {
+        float: right;
+
+        .btn-send {
+          width: 72px;
+          height: 30px;
+          margin-right: 20px;
+          background-color: $grey;
+          border: 2px solid $black;
+          border-radius: 4px;
+          color: $white;
+        }
+
+        .btn-close {
+          width: 70px;
+          height: 30px;
+          background-color: $red;
+          border: 2px solid $grey;
+          border-radius: 4px;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .card {
+    width: 295px;
+    padding: 20px;
+    margin: 0 40px 20px 0;
+    background-color: $grey-10;
+    border: 1px solid $black;
+    display: inline-block;
+
+    .photo {
+      width: 248px;
+      height: 160px;
+      background-color: $red-4;
+      margin-bottom: 20px;
+    }
+
+    .personal-data {
+      width: 122px;
+      display: inline-block;
+      margin-bottom: 30px;
+
+      .name {
+        font-size: $bodySize;
+        line-height: $bodyHeight;
+        color: $black;
+        font-weight: $regular;
+        margin-bottom: 5px;
+      }
+
+      .date {
+        font-size: $labelSize;
+        font-weight: $labelHeight;
+        color: $black;
+        font-weight: $bold;
+      }
+    }
+
+    .btn-status {
+      width: 97px;
+      height: 30px;
+      background-color: $grey;
+      border: 2px solid $grey;
+      border-radius: 32px;
+      color: $white;
+      float: right;
+      text-transform: capitalize;
+    }
+
+    .btn-edit {
+      width: 75px;
+      height: 30px;
+      background-color: $white;
+      border: 2px solid $black;
+      border-radius: 4px;
+      color: $black;
+      font-weight: $regular;
+    }
+
+    .btn-delete {
+      width: 91px;
+      height: 30px;
+      background-color: $white;
+      border: 2px solid $black;
+      border-radius: 4px;
+      color: $black;
+      font-weight: $regular;
+      float: right;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap");
+.btn-delete {
+  width: 92px;
+  height: 30px;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: 700;
+  margin-left: 20px;
+}
+
+h1 {
+  display: flex;
+  justify-content: space-between;
+}
+h1 .status {
+  display: inline-block;
+}
+h1 .status label {
+  display: block;
+  margin-right: 10px;
+  font-size: 12px;
+  height: 13.8px;
+}
+
+.container-content .profile-card {
+  display: inline-block;
+}
+.container-content .profile-card .answers {
+  border-bottom: 1px solid #000000;
+  padding: 22px 22px 35px 22px;
+  width: 445px;
+}
+.container-content .profile-card .answers h3 {
+  margin-bottom: 20px;
+}
+.container-content .profile-card .answers label {
+  position: absolute;
+  margin: 0 0 0 30px;
+}
+.container-content .profile-card .photo {
+  width: 172px;
+  height: 142px;
+  background-color: #7b7b7b;
+  display: inline-block;
+}
+.container-content .profile-card .photo-input {
+  width: 150px;
+  height: 35px;
+  display: inline-block;
+  position: absolute;
+  margin: 24px 0 0 30px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+/*# sourceMappingURL=TeamEdit.css.map */
