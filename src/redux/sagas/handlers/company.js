@@ -8,7 +8,6 @@ import {
 export function* handleSaveCompany({ payload }) {
   try {
     const response = yield call(requestSaveCompany, payload);
-    console.log(response);
     yield put(saveCompanySuccess(response));
   } catch (error) {
     console.log(error);

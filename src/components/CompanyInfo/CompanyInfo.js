@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { saveCompanyStart } from '../../redux/actions/company-actions';
+import { useCompany } from '../../queries/companyQuery';
 
 import '../../styles/CompanyInfo/CompanyInfo.css';
 
@@ -8,10 +9,16 @@ const CompanyInfo = () => {
   const dispatch = useDispatch();
 
   const [companyInfo, setCompany] = useState({
+    id: 0,
     name: '',
     image: null,
     invalid: false,
   });
+
+  const userId = 340;
+  const { data: currentCompany, isFetched } = useCompany(userId);
+
+  console.log(currentCompany);
 
   const companyNameChanged = (e) =>
     setCompany({ ...companyInfo, name: e.target.value });
@@ -28,9 +35,13 @@ const CompanyInfo = () => {
     //   return;
     // }
 
-    setCompany({ ...companyInfo, invalid: false });
+    setCompany({ ...companyInfo, invalid: false, id: currentCompany[0].id });
     console.log(companyInfo);
     dispatch(saveCompanyStart(companyInfo));
+  };
+
+  const setImage = (e) => {
+    setCompany({ ...companyInfo, image: e.target.files[0] });
   };
 
   const company = useSelector((state) => state.companyReducer.company);
@@ -43,9 +54,17 @@ const CompanyInfo = () => {
     <form className="flex flex-column" onSubmit={saveCompany}>
       <h1>Company Info</h1>
       <label>Company Name</label>
-      <input placeholder="Company Name" onChange={companyNameChanged} />
+      <input
+        placeholder="Company Name"
+        value={
+          currentCompany === undefined || currentCompany.length === 0
+            ? ''
+            : currentCompany[0].attributes.name
+        }
+        onChange={companyNameChanged}
+      />
       <label>Company Logo</label>
-      <input className="file-input" type="file" />
+      <input className="file-input" type="file" onChange={setImage} />
       {companyInfo.invalid && (
         <p className="error-message">All values are required!</p>
       )}
