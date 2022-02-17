@@ -1,0 +1,16 @@
+@import '../../variabless';
+
+form {
+  .wrapper {
+    .register {
+      background: $white;
+      border: 2px solid $black;
+      border-radius: 4px;
+      width: 104px;
+      height: 30px;
+      font-size: $bodySize;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+  }
+}

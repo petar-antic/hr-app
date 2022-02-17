@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap");
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 14px 40px 19px 16px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 2px solid #000000;
+  background: #f1f1f1;
+}
+
+nav .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 8px;
+          column-gap: 8px;
+}
+
+nav .logo span {
+  font-size: 20px;
+  line-height: 23px;
+}
+
+nav .navLinks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 32px;
+          column-gap: 32px;
+}
+
+nav .navLinks a {
+  color: #000000;
+  text-decoration: none;
+}
+
+nav .navLinks span {
+  font-size: 16px;
+  line-height: 18.4px;
+}
+/*# sourceMappingURL=Navbar.css.map */
