@@ -2,19 +2,23 @@ import React from 'react';
 import api from '../../utils/axios-instance';
 import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import '../../styles/team/Team.css';
 import Member from './member/Member';
 
-const fetchTeam = async () => {
+const fetchTeam = async (companyName) => {
   const { data } = await api.get(
-    `/profiles?filters[status][$eq]=published&filters[company][name][$eq]=Marger`
+    `/profiles?filters[status][$eq]=published&filters[company][name][$eq]=${companyName}`
   );
   return data;
 };
 
 function Team() {
-  const { status, data } = useQuery('team', fetchTeam);
+  const companyName = useSelector((state) => state.user.company.companyName);
+  const { status, data } = useQuery(['team', companyName], () =>
+    fetchTeam(companyName)
+  );
   console.log(data);
 
   return (

@@ -18,13 +18,12 @@ const DeleteModal = ({ setModalOpen, name, profileID }) => {
     const { data } = await api.delete(`/profiles/${profileID}`);
     return data;
   };
-  const { mutate, isIdle, isLoading, isError, isSuccess, data, error } =
-    useMutation(deleteProfile, {
-      onSuccess: () => {
-        queryClient.invalidateQueries('team');
-        setModalOpen(false);
-      },
-    });
+  const { mutate } = useMutation(deleteProfile, {
+    onSuccess: () => {
+      queryClient.invalidateQueries('team');
+      setModalOpen(false);
+    },
+  });
 
   return reactDom.createPortal(
     <div>

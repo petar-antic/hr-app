@@ -1,23 +1,35 @@
-import './App.css';
+import jwt_decode from 'jwt-decode';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { logInSuccess, logOut } from './redux/actions/user-actions';
 
+import './App.css';
 import AppRoutes from './routes/routes';
 import AdminAppRoutes from './routes/protected';
 
 function App() {
-  let user = JSON.parse(localStorage.getItem('user'));
-  console.log(user);
+  const dispatch = useDispatch();
 
-  // const isLogged = useSelector((state) => state.user.isLogged);
-  // const user_role = useSelector((state) => {
-  //   if (isLogged) {
-  //     return state.user.currentUser.profile.attributes.userRole;
-  //   }
-  // });
-  // console.log(isLogged);
-  // console.log(user_role);
+  const user = JSON.parse(localStorage.getItem('user'));
+  const token = localStorage.getItem('token');
+  const current_time = new Date().getTime() / 1000;
 
-  // return <>{!isLogged ? <AppRoutes /> : <AdminAppRoutes />}</>;
+  useEffect(() => {
+    if (user && token) {
+      const decoded = jwt_decode(token);
+      if (decoded.exp < current_time) {
+        console.log('token has expired');
+        dispatch(logOut());
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+      } else {
+        return dispatch(logInSuccess(user));
+      }
+    }
+  });
+
   return <>{user ? <AdminAppRoutes /> : <AppRoutes />}</>;
+  // return <>{!isLogged ? <AppRoutes /> : <AdminAppRoutes />}</>;
 }
 
 export default App;
