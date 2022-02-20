@@ -19,6 +19,8 @@ const Team = ({ status }) => {
   const { data: company, isFetched } = useCompany(userId);
   const { data: profiles, isFetching } = useProfiles(companyName, status);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     isFetched && setCompanyName(company[0].attributes.name);
   }, [company, isFetched]);
@@ -48,6 +50,11 @@ const Team = ({ status }) => {
     };
     const response = await api.post('/invite', data);
     console.log(response);
+  };
+
+  const openDetails = (id) => {
+    console.log(id);
+    navigate(`/moderate-member/${id}`);
   };
 
   return (
@@ -89,12 +96,17 @@ const Team = ({ status }) => {
                   {Moment(profile.attributes.createdAt).format('MMMM do, yyyy')}
                 </p>
               </div>
-              <button className="btn-status">{status}</button>
+              <div className="status">{status}</div>
               {status === 'published' && (
                 <button className="btn-edit">Edit</button>
               )}
               {status === 'pending' && (
-                <button className="btn-edit">Details</button>
+                <button
+                  className="btn-edit"
+                  onClick={() => openDetails(profile.id)}
+                >
+                  Details
+                </button>
               )}
               <button className="btn-delete">Delete</button>
             </div>

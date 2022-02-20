@@ -89,7 +89,7 @@
   color: #000000;
   font-weight: 400;
 }
-.container .card .btn-status {
+.container .card .status {
   width: 97px;
   height: 30px;
   background-color: #7b7b7b;
@@ -97,6 +97,8 @@
   border-radius: 32px;
   color: #ffffff;
   float: right;
+  padding-top: 4px;
+  text-align: center;
   text-transform: capitalize;
 }
 .container .card .btn-edit {

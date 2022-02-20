@@ -21,9 +21,12 @@ function AppRoutes() {
             <Route path="/company-info" element={<CompanyInfo />} />
             <Route path="/team" element={<Team status="published" />} />
             <Route path="/pending" element={<Team status="pending" />} />
-            <Route path="/team-edit" element={<TeamEdit edit={true} />} />
             <Route
-              path="/moderate-member"
+              path="/team-edit/:profileId"
+              element={<TeamEdit edit={true} />}
+            />
+            <Route
+              path="/moderate-member/:profileId"
               element={<TeamEdit edit={false} />}
             />
           </Routes>

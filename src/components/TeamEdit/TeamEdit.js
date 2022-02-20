@@ -1,8 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../styles/TeamEdit/TeamEdit.css';
+import { useParams } from 'react-router-dom';
+import api from '../../utils/axios-instance';
 
 const TeamEdit = ({ edit }) => {
-  console.log(edit);
+  const { profileId } = useParams();
+  console.log(profileId);
+
+  const [profileName, setProfileName] = useState('');
+
+  const getProfile = async () => {
+    const response = await api.get(`/profiles/${profileId}`);
+
+    setProfileName(response.data.data.attributes.name);
+    console.log(response);
+  };
+
+  getProfile();
   return (
     <>
       <div className="container">
@@ -32,7 +46,7 @@ const TeamEdit = ({ edit }) => {
             <p className="profile-card-header">Basic info</p>
             <form className="flex flex-column">
               <label>Name</label>
-              <input placeholder="Name" type="text" />
+              <input placeholder="Name" type="text" value={profileName} />
               <label>Profile Photo</label>
               <input className="file-input" type="file" />
               <div className="flex jc-end">
