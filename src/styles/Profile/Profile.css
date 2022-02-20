@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap");
+.profile-card {
+  border: 1px solid #000000;
+  margin-top: 40px;
+}
+.profile-card .profile-card-header {
+  padding: 20px 0 10px 27px;
+  border-bottom: 1px solid #000000;
+  font-size: 12px;
+  line-height: 13.8px;
+  font-weight: 700;
+}
+.profile-card form {
+  padding: 25px;
+}
+.profile-card h3 {
+  margin-top: 0;
+  margin-bottom: 13px;
+}
+
+.mr-50 {
+  margin-right: 50px;
+}
+
+/*# sourceMappingURL=Profile.css.map */

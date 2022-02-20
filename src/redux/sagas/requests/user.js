@@ -18,3 +18,14 @@ export function requestLoginUser({ payload: { email, password } }) {
   //   console.log(error.config);
   // });
 }
+
+export function requestSaveProfileInfo(profile) {
+  return api.put('/api/profiles', {
+    data: {
+      name: profile.name,
+      userRole: profile.userRole,
+      company: profile.companyId,
+      profilePhoto: profile.profilePhoto,
+    },
+  });
+}
