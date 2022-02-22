@@ -5,7 +5,7 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 import Navbar from '../components/navbar/Navbar';
 import Login from '../components/Login/Login';
 import Register from '../components/Register/Register';
-import Sidebar from '../components/sidebar/Sidebar';
+// import Sidebar from '../components/sidebar/Sidebar';
 import Questions from '../components/questions/Questions';
 import AddNewQuestion from '../components/questions/addNewQuestion/AddNewQuestion';
 import EditQuestion from '../components/questions/editQuestion/EditQuestion';
@@ -22,12 +22,12 @@ function AdminAppRoutes() {
       <Router>
         <div>
           <Navbar />
-          <Sidebar />
+          {/* <Sidebar /> */}
           <div className="app flex">
             <Routes>
               <Route exact path="/" element={<Login />} />
               <Route path="/Register" element={<Register />} />
-              <Route path="/Sidebar" element={<Sidebar />} />
+              {/* <Route path="/Sidebar" element={<Sidebar />} /> */}
               <Route path="/Questions" element={<Questions />} />
               <Route path="/Questions/:id" element />
               <Route

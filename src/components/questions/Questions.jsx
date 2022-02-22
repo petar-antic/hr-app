@@ -1,23 +1,20 @@
 import React from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useQuery } from 'react-query';
+import api from '../../utils/axios-instance';
 
 import '../../styles/questions/Questions.css';
 import Question from './question/Question';
 
 const fetchQuestions = async () => {
-  const response = await axios.get(
-    'https://internship-hr-app.herokuapp.com/api/questions?populate=*'
+  const response = await api.get(
+    '/questions?filters[company][id][$eq]=41&populate=*'
   );
   return response.data.data;
 };
 
 function Questions() {
   const { data, status } = useQuery('questions', fetchQuestions);
-  const deleteQuestion = () => {
-    console.log('delete');
-  };
 
   return (
     <div className="questions">
@@ -38,7 +35,6 @@ function Questions() {
                 type={question.attributes.type}
                 key={question.id}
                 id={question.id}
-                deleteQuestion={deleteQuestion}
               />
             );
           })}
