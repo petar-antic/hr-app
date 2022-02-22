@@ -20,11 +20,9 @@ export function requestLoginUser({ payload: { email, password } }) {
 }
 
 export function requestSaveProfileInfo(profile) {
-  return api.put('/api/profiles', {
+  return api.put('/profiles', {
     data: {
       name: profile.name,
-      userRole: profile.userRole,
-      company: profile.companyId,
       profilePhoto: profile.profilePhoto,
     },
   });

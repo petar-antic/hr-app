@@ -4,5 +4,5 @@ export function requestUploadImage(image) {
   const formData = new FormData();
   formData.append('files', image);
 
-  return api.post('/api/upload', formData, {});
+  return api.post('/upload', formData, {});
 }

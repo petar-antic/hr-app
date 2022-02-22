@@ -22,7 +22,12 @@ h1 {
       display: block;
       margin-right: 10px;
       font-size: $labelSize;
-      height: $labelHeight;
+      line-height: $labelHeight;
+    }
+
+    .select-input {
+      width: 250px;
+      height: 25px;
     }
   }
 }

@@ -6,9 +6,11 @@ import { useProfiles } from '../../queries/profileQuery';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import api from '../../utils/axios-instance';
 import { useNavigate } from 'react-router-dom';
+import { useQueryClient } from 'react-query';
 
 const Team = ({ status }) => {
-  const userId = 340;
+  const userId = 643;
+  const queryClient = useQueryClient();
   const [companyName, setCompanyName] = useState('');
 
   const [email, setEmail] = useState('');
@@ -57,6 +59,17 @@ const Team = ({ status }) => {
     navigate(`/moderate-member/${id}`);
   };
 
+  const openDetailsForm = (id) => {
+    navigate(`/team-edit/${id}`);
+  };
+
+  const deleteProfile = async (id) => {
+    console.log(id);
+
+    //const response = await api.delete(`profiles/${id}`);
+    queryClient.invalidateQueries('profiles');
+  };
+
   return (
     <>
       <div className="container">
@@ -98,7 +111,12 @@ const Team = ({ status }) => {
               </div>
               <div className="status">{status}</div>
               {status === 'published' && (
-                <button className="btn-edit">Edit</button>
+                <button
+                  className="btn-edit"
+                  onClick={() => openDetailsForm(profile.id)}
+                >
+                  Edit
+                </button>
               )}
               {status === 'pending' && (
                 <button
@@ -108,7 +126,12 @@ const Team = ({ status }) => {
                   Details
                 </button>
               )}
-              <button className="btn-delete">Delete</button>
+              <button
+                className="btn-delete"
+                onClick={() => deleteProfile(profile.id)}
+              >
+                Delete
+              </button>
             </div>
           ))}
         </div>

@@ -15,8 +15,8 @@ const Profile = () => {
 
   const [profileInfo, setProfile] = useState({
     name: '',
-    companyId: 4,
-    userRole: 'company_user',
+    //companyId: 4,
+    //userRole: 'company_user',
     image: null,
     invalid: false,
   });
@@ -33,12 +33,12 @@ const Profile = () => {
 
   const saveProfile = (e) => {
     e.preventDefault();
-    if (profileInfo.name === '') {
+    if (!profileInfo.name) {
       setProfile({ ...profileInfo, invalid: true });
       return;
     }
 
-    if (profileInfo.image === null || profileInfo.image === undefined) {
+    if (!profileInfo.image) {
       setProfile({ ...profileInfo, invalid: true });
       return;
     }

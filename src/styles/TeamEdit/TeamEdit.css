@@ -21,7 +21,11 @@ h1 .status label {
   display: block;
   margin-right: 10px;
   font-size: 12px;
-  height: 13.8px;
+  line-height: 13.8px;
+}
+h1 .status .select-input {
+  width: 250px;
+  height: 40px;
 }
 
 .container-content .profile-card {
