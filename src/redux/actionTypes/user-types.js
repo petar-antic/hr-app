@@ -16,3 +16,6 @@ export const LOG_OUT = 'LOG_OUT';
 export const SAVE_PROFILE_START = 'SAVE_PROFILE_START';
 export const SAVE_PROFILE_SUCCESS = 'SAVE_PROFILE_SUCCESS';
 export const SAVE_PROFILE_ERROR = 'SAVE_PROFILE_ERROR';
+// Upload image test
+
+export const UPLOAD_IMAGE = 'UPLOAD_IMAGE';

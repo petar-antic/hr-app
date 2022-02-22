@@ -1,0 +1,87 @@
+@import '../../../variabless';
+
+.addNewQuestion {
+  padding: 34px 432px 0px 49px;
+  display: flex;
+  flex-direction: column;
+  .heading {
+    padding-bottom: 38px;
+    font-weight: $bold;
+    font-size: $h1Size;
+    line-height: $h1Height;
+    letter-spacing: 0.04em;
+    color: $black;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    .questionText {
+      padding-bottom: 34px;
+      display: flex;
+      flex-direction: column;
+      label {
+        font-weight: $regular;
+        font-size: $labelSize;
+        line-height: $labelHeight;
+        letter-spacing: 0.04em;
+        color: $black;
+      }
+      input {
+        font-weight: $regular;
+        font-size: $bodySize;
+        line-height: $bodyHeight;
+        color: $grey;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+    .questionType {
+      padding-bottom: 34px;
+      display: flex;
+      flex-direction: column;
+      label {
+        font-weight: $regular;
+        font-size: $labelSize;
+        line-height: $labelHeight;
+        letter-spacing: 0.04em;
+        color: $black;
+      }
+      select {
+        border: 2px solid $black;
+        padding: 9px 0 10px 16px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-image: url(../../../assets/icons/arrow3down.svg);
+        background-repeat: no-repeat;
+        background-position: right 8px center;
+        font-weight: $regular;
+        font-size: $bodySize;
+        line-height: $bodyHeight;
+        color: $grey;
+        &:hover {
+          cursor: pointer;
+        }
+        &:focus {
+          outline: none;
+          border: 2px solid $black;
+        }
+      }
+    }
+    #saveBtn {
+      align-self: flex-end;
+      padding: 6px 24px;
+      border: 2px solid $black;
+      border-radius: 4px;
+      background: $white;
+      font-weight: $bold;
+      font-size: $bodySize;
+      line-height: $bodyHeight;
+      color: $black;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

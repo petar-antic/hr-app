@@ -15,14 +15,23 @@ const api = axios.create({
 
 api.interceptors.request.use(
   (config) => {
-    const token =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mzc3LCJpYXQiOjE2NDQ1ODk4NDksImV4cCI6MTY0NDU5NzA0OX0.ioGtnIT1kymAOnR3W2ESj59gT54rkh413nL9a9NfVgM';
+    const token = localStorage.getItem('token');
     if (token) {
       config.headers.common['Authorization'] = `Bearer ${token}`;
     }
     return config;
   },
   (error) => {
+    Promise.reject(error);
+  }
+);
+
+api.interceptors.response.use(
+  (response) => {
+    return response;
+  },
+  (error) => {
+    // konzoloovati gresku i proveriti koji je njegov status, ako je greska 401 izbrisati sve iz lokal storidza
     Promise.reject(error);
   }
 );

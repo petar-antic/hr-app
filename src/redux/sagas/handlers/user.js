@@ -1,5 +1,6 @@
 import { call, put } from 'redux-saga/effects';
 
+<<<<<<< HEAD
 import {
   logInFailure,
   logInSuccess,
@@ -8,12 +9,26 @@ import {
 } from '../../actions/user-actions';
 import { requestUploadImage } from '../requests/file';
 import { requestLoginUser, requestSaveProfileInfo } from '../requests/user';
+=======
+import { logInFailure, logInSuccess } from '../../actions/user-actions';
+import { requestLoginUser, requestUserProfile } from '../requests/user';
+>>>>>>> team-members
 
 export function* handleLoginUser(payload) {
   try {
     const response = yield call(requestLoginUser, payload);
     console.log(response);
-    yield put(logInSuccess(response));
+    if (response.status === 200) {
+      const userProfile = yield call(requestUserProfile, response.data.user.id);
+      console.log(userProfile.data.data[0]);
+      const user = {
+        user: response.data.user,
+        profile: userProfile.data.data[0],
+      };
+      localStorage.setItem('token', response.data.jwt);
+      localStorage.setItem('user', JSON.stringify(user));
+      yield put(logInSuccess(user));
+    }
   } catch (error) {
     yield put(logInFailure(error));
     if (error.response) {

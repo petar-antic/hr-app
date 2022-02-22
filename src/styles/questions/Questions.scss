@@ -1,0 +1,110 @@
+@import '../../variabless';
+
+.questions {
+  padding: 34px 39px 0px 50px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 18px;
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    column-gap: 733px;
+    span {
+      font-weight: $bold;
+      font-size: $h1Size;
+      line-height: $h1Height;
+      letter-spacing: 0.04em;
+      color: $black;
+    }
+    button {
+      border: 2px solid $black;
+      border-radius: 4px;
+      padding: 7px 24px 7px 48px;
+      background-color: $white;
+      background-image: url('../../assets/icons/add.svg');
+      background-repeat: no-repeat;
+      background-position-y: center;
+      background-position-x: 24px;
+      font-weight: $bold;
+      font-size: $bodySize;
+      line-height: $bodyHeight;
+      white-space: nowrap;
+      color: $black;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .questionList {
+    .question {
+      border: 1px solid $black;
+      display: grid;
+      padding: 25px 40px 22px 19px;
+      grid-template-areas: 'leftSide rightSide';
+      .leftSide {
+        grid-area: leftSide;
+        display: grid;
+        justify-content: start;
+        align-items: center;
+        column-gap: 21px;
+        grid-template-areas:
+          'topBtn questionNum'
+          'downBtn questionTitle';
+        .topBtn {
+          grid-area: topBtn;
+          padding-bottom: 2px;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        .downBtn {
+          grid-area: downBtn;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        .questionNum {
+          grid-area: questionNum;
+          padding-bottom: 6px;
+          font-weight: $bold;
+          font-size: $labelSize;
+          line-height: $labelHeight;
+          letter-spacing: 0.04em;
+          color: $black;
+        }
+        .questionTitle {
+          grid-area: questionTitle;
+          font-weight: $regular;
+          font-size: $h3Size;
+          line-height: $h3Height;
+          color: $black;
+        }
+      }
+      .rightSide {
+        grid-area: rightSide;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        column-gap: 20px;
+        button {
+          padding: 6px 24px;
+          font-weight: $bold;
+          font-size: $bodySize;
+          line-height: $bodyHeight;
+          color: $black;
+          background: $white;
+          border: 2px solid $black;
+          border-radius: 4px;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        .delBtn {
+          background: $grey-7;
+        }
+      }
+    }
+  }
+}

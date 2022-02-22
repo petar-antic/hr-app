@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap");
+.DeleteModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.DeleteModal .Modal {
+  max-width: 480px;
+  background-color: #ffffff;
+  padding: 48px;
+  border-radius: 8px;
+}
+
+.DeleteModal .Modal h1 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.5px;
+  color: #000000;
+}
+
+.DeleteModal .Modal p {
+  font-size: 12px;
+  line-height: 22px;
+  color: #7b7b7b;
+  margin-top: 13px;
+  font-weight: 500;
+}
+
+.DeleteModal .Modal .Buttons {
+  font-family: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-top: 16px;
+  height: 48px;
+  border-radius: 24px;
+}
+
+.DeleteModal .Modal .Buttons .Cancel {
+  width: 91px;
+  background: #252945;
+  color: #dfe3fa;
+  padding: 10px;
+  border: none;
+}
+
+.DeleteModal .Modal .Buttons .Cancel:hover {
+  background: #ffffff;
+  color: #252945;
+}
+
+.DeleteModal .Modal .Buttons .Delete {
+  width: 89px;
+  background: #ec5757;
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  margin: 0 8px;
+}
+
+.DeleteModal .Modal .Buttons .Delete:hover {
+  background: #ff9797;
+}
+/*# sourceMappingURL=DeleteModal.css.map */

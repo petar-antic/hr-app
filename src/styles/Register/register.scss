@@ -1,6 +1,25 @@
 @import '../../variabless';
 
 form {
+  select {
+    margin-bottom: 20px;
+  }
+  div {
+    align-items: center;
+    justify-content: space-evenly;
+    div {
+      align-items: center;
+      label {
+        margin: 0;
+      }
+      input {
+        margin: 0;
+      }
+    }
+    .radioBtn {
+      width: auto;
+    }
+  }
   .wrapper {
     .register {
       background: $white;

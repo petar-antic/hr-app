@@ -1,8 +1,8 @@
 import * as types from '../actionTypes/user-types';
 
 const INITIAL_STATE = {
-  currentUser: null,
-  error: null,
+  currentUser: [],
+  error: [],
 };
 
 const registerReducer = (state = INITIAL_STATE, action) => {

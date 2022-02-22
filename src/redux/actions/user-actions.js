@@ -54,3 +54,10 @@ export const saveProfileError = (error) => ({
   type: types.SAVE_PROFILE_ERROR,
   payload: error,
 });
+
+// Image upload
+
+export const uploadImage = (formData) => ({
+  type: types.UPLOAD_IMAGE,
+  formData,
+});
