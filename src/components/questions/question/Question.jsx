@@ -1,15 +1,28 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useMutation, useQueryClient } from 'react-query';
+import api from '../../../utils/axios-instance';
 
-// import '../../styles/questions/Questions.css';
 import topBtn from '../../../assets/icons/arrow1top.svg';
 import downBtn from '../../../assets/icons/arrow1down.svg';
 
 function Question(props) {
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
+
   const editFunc = () => {
-    navigate('/questions/editquestion', { state: { type: props.type } });
+    navigate('/questions/editquestion', { state: { id: props.id } });
   };
+
+  const deleteQuestion = async (id) => {
+    return await api.delete(`/questions/${id}`);
+  };
+
+  const { mutate } = useMutation(deleteQuestion, {
+    onSuccess: () => {
+      queryClient.invalidateQueries('questions');
+    },
+  });
 
   return (
     <div className="question">
@@ -25,7 +38,9 @@ function Question(props) {
         </button>
         <button
           className="delBtn"
-          onClick={() => props.deleteQuestion(props.id)}
+          onClick={() => {
+            mutate(props.id);
+          }}
         >
           Delete
         </button>

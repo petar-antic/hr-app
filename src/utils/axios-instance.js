@@ -26,4 +26,14 @@ api.interceptors.request.use(
   }
 );
 
+api.interceptors.response.use(
+  (response) => {
+    return response;
+  },
+  (error) => {
+    // konzoloovati gresku i proveriti koji je njegov status, ako je greska 401 izbrisati sve iz lokal storidza
+    Promise.reject(error);
+  }
+);
+
 export default api;
