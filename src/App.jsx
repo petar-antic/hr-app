@@ -26,7 +26,7 @@ function App() {
         return dispatch(logInSuccess(user));
       }
     }
-  });
+  }, []);
 
   return <>{user ? <AdminAppRoutes /> : <AppRoutes />}</>;
   // return <>{!isLogged ? <AppRoutes /> : <AdminAppRoutes />}</>;
