@@ -23,12 +23,17 @@ function App() {
         localStorage.removeItem('token');
         localStorage.removeItem('user');
       } else {
+        console.log('token is valid');
         return dispatch(logInSuccess(user));
       }
     }
   }, []);
 
-  return <>{user ? <AdminAppRoutes /> : <AppRoutes />}</>;
+  return (
+    <>
+      <AppRoutes />
+    </>
+  );
   // return <>{!isLogged ? <AppRoutes /> : <AdminAppRoutes />}</>;
 }
 

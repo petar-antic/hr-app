@@ -3,7 +3,8 @@ form .file-input {
   height: 50px;
   padding-right: 8.5px;
 }
-form input[type=file]::file-selector-button {
+
+form input[type='file']::file-selector-button {
   width: 122px;
   height: 30px;
   border-radius: 4px;
@@ -13,9 +14,13 @@ form input[type=file]::file-selector-button {
   margin: 7px 0;
   padding: 6px 24px;
 }
+
 form .jc-end {
-  justify-content: end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
 }
+
 form .jc-end .btn-save {
   background: #ffffff;
   border: 2px solid #000000;
@@ -25,5 +30,4 @@ form .jc-end .btn-save {
   font-size: 16px;
   font-weight: bold;
 }
-
 /*# sourceMappingURL=CompanyInfo.css.map */

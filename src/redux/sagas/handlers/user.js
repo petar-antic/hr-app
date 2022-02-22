@@ -1,6 +1,5 @@
 import { call, put } from 'redux-saga/effects';
 
-<<<<<<< HEAD
 import {
   logInFailure,
   logInSuccess,
@@ -8,11 +7,11 @@ import {
   saveProfileError,
 } from '../../actions/user-actions';
 import { requestUploadImage } from '../requests/file';
-import { requestLoginUser, requestSaveProfileInfo } from '../requests/user';
-=======
-import { logInFailure, logInSuccess } from '../../actions/user-actions';
-import { requestLoginUser, requestUserProfile } from '../requests/user';
->>>>>>> team-members
+import {
+  requestLoginUser,
+  requestSaveProfileInfo,
+  requestUserProfile,
+} from '../requests/user';
 
 export function* handleLoginUser(payload) {
   try {

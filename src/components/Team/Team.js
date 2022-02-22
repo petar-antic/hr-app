@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import Moment from 'moment';
-import '../../styles/Team/Team.css';
+import api from '../../utils/axios-instance';
 import { useCompany } from '../../queries/companyQuery';
 import { useProfiles } from '../../queries/profileQuery';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import api from '../../utils/axios-instance';
 import { useNavigate } from 'react-router-dom';
 import { useQueryClient } from 'react-query';
 
+import '../../styles/Team/Team.css';
+
 const Team = ({ status }) => {
   const userId = 643;
+  console.log(userId);
   const queryClient = useQueryClient();
   const [companyName, setCompanyName] = useState('');
 
