@@ -3,7 +3,8 @@ import * as types from '../actionTypes/user-types';
 const INITIAL_STATE = {
   isLogged: false,
   userRole: null,
-  currentUser: [],
+  userID: null,
+  currentUser: {},
   profile: undefined,
   error: [],
   company: [],
@@ -16,6 +17,7 @@ const userReducer = (state = INITIAL_STATE, action) => {
         ...state,
         isLogged: true,
         userRole: action.payload.profile.attributes.userRole,
+        userID: action.payload.user.id,
         currentUser: action.payload,
         error: null,
         company: {

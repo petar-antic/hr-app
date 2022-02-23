@@ -6,12 +6,15 @@ import { useProfiles } from '../../queries/profileQuery';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { useNavigate } from 'react-router-dom';
 import { useQueryClient } from 'react-query';
+import { useSelector } from 'react-redux';
 
 import '../../styles/Team/Team.css';
 
 const Team = ({ status }) => {
+  const userID = useSelector((state) => state.user.userID);
+  console.log(userID);
+
   const userId = 643;
-  console.log(userId);
   const queryClient = useQueryClient();
   const [companyName, setCompanyName] = useState('');
 
@@ -20,7 +23,7 @@ const Team = ({ status }) => {
   const [showForm, setShowForm] = useState(false);
 
   //get users company so we can pass companyName when fetching team members (profiles)
-  const { data: company, isFetched } = useCompany(userId);
+  const { data: company, isFetched } = useCompany(userID);
   const { data: profiles, isFetching } = useProfiles(companyName, status);
 
   const navigate = useNavigate();
