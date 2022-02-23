@@ -13,8 +13,6 @@ import '../../styles/Team/Team.css';
 const Team = ({ status }) => {
   const userID = useSelector((state) => state.user.userID);
   console.log(userID);
-
-  const userId = 643;
   const queryClient = useQueryClient();
   const [companyName, setCompanyName] = useState('');
 

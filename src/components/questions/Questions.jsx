@@ -2,19 +2,25 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import api from '../../utils/axios-instance';
+import { useSelector } from 'react-redux';
 
 import '../../styles/questions/Questions.css';
 import Question from './question/Question';
 
-const fetchQuestions = async () => {
-  const response = await api.get(
-    '/questions?filters[company][id][$eq]=41&populate=*'
-  );
-  return response.data.data;
+const fetchQuestions = async ({ queryKey }) => {
+  if (queryKey[1] !== undefined) {
+    const response = await api.get(
+      `/questions?filters[company][id][$eq]=${queryKey[1]}&populate=*`
+    );
+    console.log(response);
+    return response.data.data;
+  }
 };
 
 function Questions() {
-  const { data, status } = useQuery('questions', fetchQuestions);
+  const companyID = useSelector((state) => state.user.company.companyID);
+  console.log(companyID);
+  const { data, status } = useQuery(['questions', companyID], fetchQuestions);
 
   return (
     <div className="questions">

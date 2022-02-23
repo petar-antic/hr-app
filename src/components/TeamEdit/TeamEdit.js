@@ -5,6 +5,7 @@ import api from '../../utils/axios-instance';
 import { saveProfileStart } from '../../redux/actions/user-actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import EditAnswers from './EditAnswers';
 
 const TeamEdit = ({ edit }) => {
   const { profileId } = useParams();
@@ -107,28 +108,7 @@ const TeamEdit = ({ edit }) => {
               </div>
             </form>
           </div>
-          <div className="profile-card">
-            <p className="profile-card-header">Answers</p>
-            <form className="flex flex-column">
-              <div className="answers">
-                <h3>Question 1 - Do you have a pet?</h3>
-                <input type="text" />
-              </div>
-              <div className="answers">
-                <h3>Question 2 - Which city do you live?</h3>
-                <input type="text" />
-              </div>
-              <div className="answers mb-40">
-                <h3>Question 3 - Take a photo of your Chistmas...</h3>
-                <div className="photo"></div>
-                <label>Change photo</label>
-                <input className="photo-input" type="file" />
-              </div>
-              <div className="flex jc-end">
-                <button className="btn-save">Save</button>
-              </div>
-            </form>
-          </div>
+          <EditAnswers id={profileId} />
         </div>
       </div>
     </>
