@@ -9,9 +9,12 @@ const fetchAnswers = async ({ queryKey }) => {
   return data.data;
 };
 
-const editAllAnswers = async () => {
-  return api.put(`/answers`, {
-    data: {},
+const editAllAnswers = async (answer) => {
+  return api.put(`/answers/${answer.answerID}`, {
+    data: {
+      answer: answer.value,
+      profile: answer.profileID,
+    },
   });
 };
 
@@ -22,7 +25,7 @@ const EditAnswers = ({ id }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     text.forEach((answer) => {
-      console.log(answer);
+      mutate(answer);
     });
   };
 
@@ -34,12 +37,10 @@ const EditAnswers = ({ id }) => {
     },
   });
 
-  // const handleChange = (value, i, answerID) => {
-  //   setText((prevText) => [...prevText, answerID]);
-  //   console.log(text);
-  // };
   const handleChange = (value, i, answerID) => {
-    setText((text) => ({ ...text, [i]: value }));
+    let newArray = [...text];
+    newArray[i] = { value, answerID, profileID: id };
+    setText(newArray);
     console.log(text);
   };
 
