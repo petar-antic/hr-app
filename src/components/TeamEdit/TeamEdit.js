@@ -51,7 +51,7 @@ const TeamEdit = ({ edit }) => {
   console.log(profile);
 
   const deleteProfile = async () => {
-    const response = await api.delete(`profiles/${id}`);
+    const response = await api.delete(`profiles/${profileId}`);
 
     if (edit) {
       navigate('/team');
