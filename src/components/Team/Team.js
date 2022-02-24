@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Moment from 'moment';
 import '../../styles/Team/Team.css';
 import { useCompany } from '../../queries/companyQuery';
-import { useProfiles } from '../../queries/profileQuery';
+import { useCompanyProfiles } from '../../queries/profileQuery';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import api from '../../utils/axios-instance';
 import { useNavigate } from 'react-router-dom';
@@ -19,7 +19,10 @@ const Team = ({ status }) => {
 
   //get users company so we can pass companyName when fetching team members (profiles)
   const { data: company, isFetched } = useCompany(userId);
-  const { data: profiles, isFetching } = useProfiles(companyName, status);
+  const { data: profiles, isFetching } = useCompanyProfiles(
+    companyName,
+    status
+  );
 
   const navigate = useNavigate();
 
@@ -54,19 +57,19 @@ const Team = ({ status }) => {
     console.log(response);
   };
 
-  const openDetails = (id) => {
+  const showDetails = (id) => {
     console.log(id);
     navigate(`/moderate-member/${id}`);
   };
 
-  const openDetailsForm = (id) => {
+  const editProfile = (id) => {
     navigate(`/team-edit/${id}`);
   };
 
   const deleteProfile = async (id) => {
     console.log(id);
 
-    //const response = await api.delete(`profiles/${id}`);
+    const response = await api.delete(`profiles/${id}`);
     queryClient.invalidateQueries('profiles');
   };
 
@@ -106,14 +109,14 @@ const Team = ({ status }) => {
                 <p className="name">{profile.attributes.name}</p>
                 <p className="date">
                   Joined{' '}
-                  {Moment(profile.attributes.createdAt).format('MMMM do, yyyy')}
+                  {Moment(profile.attributes.createdAt).format('MMMM Do, yyyy')}
                 </p>
               </div>
               <div className="status">{status}</div>
               {status === 'published' && (
                 <button
                   className="btn-edit"
-                  onClick={() => openDetailsForm(profile.id)}
+                  onClick={() => editProfile(profile.id)}
                 >
                   Edit
                 </button>
@@ -121,7 +124,7 @@ const Team = ({ status }) => {
               {status === 'pending' && (
                 <button
                   className="btn-edit"
-                  onClick={() => openDetails(profile.id)}
+                  onClick={() => showDetails(profile.id)}
                 >
                   Details
                 </button>

@@ -34,6 +34,7 @@ export function* handleSaveProfileInfo({ payload }) {
     const profile = {
       name: payload.name,
       profilePhoto: resp.data[0].id,
+      id: payload.id,
     };
     const response = yield call(requestSaveProfileInfo, profile);
     yield put(saveProfileSuccess(response));

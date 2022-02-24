@@ -20,7 +20,7 @@ export function requestLoginUser({ payload: { email, password } }) {
 }
 
 export function requestSaveProfileInfo(profile) {
-  return api.put('/profiles', {
+  return api.put(`/profiles/${profile.id}`, {
     data: {
       name: profile.name,
       profilePhoto: profile.profilePhoto,

@@ -12,6 +12,7 @@ const TeamEdit = ({ edit }) => {
 
   const [profileName, setProfileName] = useState('');
   const [profileImage, setProfileImage] = useState(null);
+  const [profileStatus, setProfileStatus] = useState('');
 
   const navigate = useNavigate();
 
@@ -40,6 +41,7 @@ const TeamEdit = ({ edit }) => {
       // companyId: 4,
       // userRole: 'company_user',
       image: profileImage,
+      id: profileId,
     };
 
     dispatch(saveProfileStart(profileInfo));
@@ -49,13 +51,25 @@ const TeamEdit = ({ edit }) => {
   console.log(profile);
 
   const deleteProfile = async () => {
-    //const response = await api.delete(`profiles/${id}`);
+    const response = await api.delete(`profiles/${id}`);
 
     if (edit) {
       navigate('/team');
     } else {
       navigate('/pending');
     }
+  };
+
+  const approveProfile = async () => {
+    const data = {
+      data: {
+        status: 'published',
+      },
+    };
+    const response = await api.put(`/profiles/${profileId}`, data);
+
+    setProfileStatus('published');
+    navigate('/team');
   };
 
   return (
@@ -82,7 +96,9 @@ const TeamEdit = ({ edit }) => {
           <h1>
             Moderate team member entry
             <div>
-              <button className="btn-delete">Approve</button>
+              <button className="btn-delete" onClick={approveProfile}>
+                Approve
+              </button>
               <button className="btn-delete" onClick={deleteProfile}>
                 Delete
               </button>

@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useUserProfile } from '../../queries/profileQuery';
 import { saveProfileStart } from '../../redux/actions/user-actions';
 
 import '../../styles/Profile/Profile.css';
 
 const Profile = () => {
   const dispatch = useDispatch();
+
+  const userId = 643;
 
   const [credentials, setCredentials] = useState({
     email: '',
@@ -14,12 +17,23 @@ const Profile = () => {
   });
 
   const [profileInfo, setProfile] = useState({
+    id: 0,
     name: '',
     //companyId: 4,
     //userRole: 'company_user',
     image: null,
     invalid: false,
   });
+
+  const { data: profile } = useUserProfile(userId);
+
+  useEffect(() => {
+    setProfile({
+      ...profileInfo,
+      name: profile?.attributes.name,
+      id: profile?.id,
+    });
+  }, [profile]);
 
   const handleChange = (e) =>
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
@@ -48,8 +62,8 @@ const Profile = () => {
     dispatch(saveProfileStart(profileInfo));
   };
 
-  const profile = useSelector((state) => state.user.profile);
-  console.log(profile);
+  const userProfile = useSelector((state) => state.user.profile);
+  console.log(userProfile);
 
   return (
     <>
@@ -58,7 +72,12 @@ const Profile = () => {
         <p className="profile-card-header">Basic info</p>
         <form className="flex flex-column" onSubmit={saveProfile}>
           <label>Name</label>
-          <input placeholder="Name" type="text" onChange={nameChanged} />
+          <input
+            placeholder="Name"
+            type="text"
+            value={profileInfo.name}
+            onChange={nameChanged}
+          />
           <label>Profile Photo</label>
           <input className="file-input" type="file" onChange={addImage} />
           {profileInfo.invalid && (

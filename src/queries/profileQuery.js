@@ -11,8 +11,19 @@ export const getCompanyProfiles = async (companyName, status) => {
   return profiles;
 };
 
-export const useProfiles = (companyName, status) => {
+export const useCompanyProfiles = (companyName, status) => {
   return useQuery(['profiles', companyName, status], () =>
     getCompanyProfiles(companyName, status)
   );
+};
+
+export const getUserProfile = async (userId) => {
+  const profile = await api
+    .get(`/profiles?filters[user][id][$eq]=${userId}&populate=*`)
+    .then((res) => res.data.data[0]);
+  return profile;
+};
+
+export const useUserProfile = (userId) => {
+  return useQuery(['profile', userId], () => getUserProfile(userId));
 };
