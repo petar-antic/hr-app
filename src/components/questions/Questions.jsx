@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import api from '../../utils/axios-instance';
 import { useSelector } from 'react-redux';
@@ -12,23 +12,24 @@ const fetchQuestions = async ({ queryKey }) => {
     const response = await api.get(
       `/questions?filters[company][id][$eq]=${queryKey[1]}&populate=*`
     );
-    console.log(response);
     return response.data.data;
   }
 };
 
 function Questions() {
+  const navigate = useNavigate();
   const companyID = useSelector((state) => state.user.company.companyID);
-  console.log(companyID);
   const { data, status } = useQuery(['questions', companyID], fetchQuestions);
+
+  const addFunc = () => {
+    navigate('/questions/addnewquestion', { state: { companyID: companyID } });
+  };
 
   return (
     <div className="questions">
       <div className="heading">
         <span>Questions</span>
-        <Link to={`/questions/addnewquestion`}>
-          <button>Add new Question</button>
-        </Link>
+        <button onClick={addFunc}>Add new Question</button>
       </div>
       {status === 'loading' && <div>Loading data...</div>}
       {status === 'error' && <div>Error fetching data</div>}

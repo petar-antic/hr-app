@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../../utils/axios-instance';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useQuery, useMutation, useQueryClient } from 'react-query';
 import '../../../styles/questions/addNewQuestion/AddNewQuestion.css';
 
@@ -12,6 +12,7 @@ const fetchQuestions = async () => {
 
 function AddNewQuestion() {
   const queryClient = useQueryClient();
+  const location = useLocation();
   const navigate = useNavigate();
 
   const { data } = useQuery('questionsLength', fetchQuestions);
@@ -32,7 +33,7 @@ function AddNewQuestion() {
         text: text,
         type: type,
         order: questionsLength + 1,
-        company: 41,
+        company: location.state.companyID,
       },
     });
   };

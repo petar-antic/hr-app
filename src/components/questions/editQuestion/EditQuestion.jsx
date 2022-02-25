@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router';
 import { useQuery, useMutation, useQueryClient } from 'react-query';
 import '../../../styles/questions/editQuestion/EditQuestion.css';
 import api from '../../../utils/axios-instance';
@@ -13,8 +12,6 @@ function EditQuestion() {
   const queryClient = useQueryClient();
   const location = useLocation();
   const navigate = useNavigate();
-
-  console.log(location.state.id);
 
   const { data } = useQuery(['questionId', location.state.id], fetchQuestion, {
     onSuccess: (newData) => {
